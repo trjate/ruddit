@@ -1,9 +1,5 @@
-Class User < ActiveRecord::Base
-# has_one :username
-has_one :email
-has_one :password
+class User < ActiveRecord::Base
 has_many :links
 has_many :comments
-
 
 end
