@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def create
     passhash = Digest::SHA1.hexdigest(params[:password])
-    @users = Users.create(email: params[:email],
+    @user = User.create(email: params[:email],
                           #username: params[:username],
                         password: passhash)
 
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def all
-    @users = Users.all
+    @user = User.all
   end
 
 end

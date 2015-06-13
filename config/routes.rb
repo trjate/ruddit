@@ -13,7 +13,7 @@ post '/users', to: 'users#create' # creates a user
 
 get '/links/new', to: 'links#new' # show the form to create a new link
 post '/links', to: 'links#create' # creates a link
-get '/link/:id', to: 'links#transfer' # shows me an individual link
+get '/link/:id', to: 'links#show', as: 'link_transfer' # shows me an individual link
 
 
 #Comments routes
