@@ -1,21 +1,10 @@
 <%= form_tag(@action, method: :post) do %>
 
   <div>
-    <%= label_tag(:title, "Title: ") %>
-    <%= text_field_tag(:title, nil, size: 50) %>
+    <%= label_tag(:content, "Enter your comment: ") %>
+    <br/>
+    <%= text_area_tag(:content, nil, rows: 15, cols: 25) %>
   </div>
-
-  <div>
-    <%= label_tag(:destination, "URL/Link: ") %>
-    <%= text_field_tag(:destination, nil, size: 200) %>
-  </div>
-
-  <!-- <div>
-    <%= label_tag(:content, "Text (optional): ") %>
-    <%= text_field_tag(:conent, nil, size: 150) %>
-  </div> -->
-
-
 
   <%= submit_tag("Submit link!") %>
 <% end %>

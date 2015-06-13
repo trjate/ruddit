@@ -1,18 +1,17 @@
 class CommentsController < ApplicationController
 
   def new
-    @action = users_path
+    @action = comments_new_path
     render :new
   end
 
   def create
-    passhash = Digest::SHA1.hexdigest(params[:password])
-    @user = User.create(email: params[:email],
-                          #username: params[:username],
-                        password: passhash)
 
-    flash[:notice] = "User successfully created. Welcome!"
-    redirect_to :root
+    @comment = Comment.create(user_id: params[:user_id],
+                        link_id: params[:link_id],
+                        content: params[:content])
+                        
+    redirect_to comments_new_path
   end
 
   def all
