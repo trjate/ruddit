@@ -1,14 +1,12 @@
-class Linkscontroller < Applicationcontroller
+class LinksController < ApplicationController
 
 
 def index
  @links = Link.all
-
 end
 
 def new
   render :new
-
 end
 
 def create
