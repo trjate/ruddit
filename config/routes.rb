@@ -18,9 +18,8 @@ get '/link/:id', to: 'links#show', as: 'link_transfer' # shows me an individual 
 
 #Comments routes
 
-get '/link/:id/comments', to: 'comments#new', as: 'comments_new'# get the page for a link, its comments, and comment form
+get '/link/:id/comments', to: 'comments#show', as: 'comments_show'# get the page for a link, its comments, and comment form
 post '/link/:id/comments', to: 'comments#create'  # the form action for new comment, creates a comment (if logged in)
-
 
 #Session routes
 
