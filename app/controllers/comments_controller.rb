@@ -4,23 +4,22 @@ class CommentsController < ApplicationController
 
 def show
   @link = Link.find(params[:id])
-
   render :show
 end
 
 
 
   def create
+      @link = Link.find(params[:id])
+      @comment = Comment.create(
+                          link_id: @link.id,
+                          content: params[:content])
 
-    @comment = Comment.create(user_id: params[:user_id],
-                        link_id: params[:link_id],
-                        content: params[:content])
-
-    redirect_to comments_new_path
+    redirect_to comments_show_path
   end
 
-  def all
-    @user = User.all
-  end
 
 end
+
+
+### < 
