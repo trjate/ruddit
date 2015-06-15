@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
 
 def show
   @link = Link.find(params[:id])
+  @comment = Comment.find(params[:id],
+                          params[:content])
+                          #params[:user_id])
+  #You can pull up one comment through ^
 
   render :show
 end
@@ -16,11 +20,9 @@ end
                         link_id: params[:link_id],
                         content: params[:content])
 
-    redirect_to comments_new_path
+    redirect_to comments_show_path
   end
 
-  def all
-    @user = User.all
-  end
+
 
 end
