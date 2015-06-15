@@ -17,7 +17,7 @@ def create
                         destination: params[:destination],
                         user_id: params[:user_id],
                         timestamps: DateTime.now)
-    redirect_to link_transfer_path(@link)
+    redirect_to root_path
 end
 
 def url_with_protocol

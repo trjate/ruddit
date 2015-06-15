@@ -16,7 +16,7 @@ end
                         link_id: params[:link_id],
                         content: params[:content])
 
-    redirect_to comments_new_path
+    redirect_to comments_show_path
   end
 
   def all
